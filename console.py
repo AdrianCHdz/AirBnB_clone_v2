@@ -126,12 +126,10 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) > 1:
             for x in arg[1:]:
                 param = x.split("=")[1].replace("_", " ")
-                if param.isdigit():
-                    param = int(param)
-                elif "." in param:
-                    param = float(param)
-                elif "\"" in param:
-                    param = param.strip("\"")
+                try:
+                    param = eval(param)
+                except Exception:
+                    pass
                 setattr(new_instance, x.split("=")[0], param)
         new_instance.save()
         print(new_instance.id)
