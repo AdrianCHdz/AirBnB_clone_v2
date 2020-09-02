@@ -35,7 +35,6 @@ class DBStorage:
         """something"""
         classdict = {}
         if cls is None:
-            #cls = [User, State, City, Amenity, Place, Review]
             cls = [State, City]
         else:
             cls = [cls]
@@ -67,4 +66,5 @@ class DBStorage:
         self.__session = Session()
 
     def close(self):
+        """docs"""
         self.__session.close()
