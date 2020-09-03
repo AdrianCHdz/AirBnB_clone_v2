@@ -2,8 +2,7 @@
 """New engine DBStorage"""
 from sqlalchemy import create_engine
 from os import getenv
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import scoped_session
+from sqlalchemy.orm import sessionmaker, scoped_session
 from models.user import User
 from models.state import State
 from models.city import City
@@ -35,7 +34,7 @@ class DBStorage:
         """something"""
         classdict = {}
         if cls is None:
-            cls = [State, City]
+            cls = [State, City, User]
         else:
             cls = [cls]
         for classes in cls:
@@ -56,6 +55,7 @@ class DBStorage:
         """delete from the current database session"""
         if obj:
             self.__session.delete(obj)
+            self.save()
 
     def reload(self):
         """Create alltables in the database"""
