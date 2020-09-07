@@ -34,7 +34,7 @@ class DBStorage:
         """something"""
         classdict = {}
         if cls is None:
-            cls = [State, City, User]
+            cls = [State, City, User, Place]
         else:
             cls = [cls]
         for classes in cls:
