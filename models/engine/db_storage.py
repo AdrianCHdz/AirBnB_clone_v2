@@ -9,7 +9,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
-from models.base_model import BaseModel, Base
+from models.base_model import Base
 
 
 class DBStorage:
@@ -34,7 +34,7 @@ class DBStorage:
         """something"""
         classdict = {}
         if cls is None:
-            cls = [State, City, User, Place, Review]
+            cls = [State, City, User, Place, Review, Amenity]
         else:
             cls = [cls]
         for classes in cls:
