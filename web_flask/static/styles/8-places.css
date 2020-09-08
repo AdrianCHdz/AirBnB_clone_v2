@@ -26,10 +26,10 @@ article {
 
 .headline {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	position: relative;
-
-	height: 80px;	
+	padding-right: 100px;
+	height: inherit;
 	width: 100%;
 }
 
